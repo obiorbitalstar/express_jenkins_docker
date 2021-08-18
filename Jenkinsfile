@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'docker build -t obiorbitalstar/node-web-app .  '
+                sh 'docker build -t gcr.io/firststepbruh/express-image:v0.1 . '
             }
         }
         
@@ -15,7 +15,7 @@ pipeline {
 
         stage('deploy') {
             steps {
-                sh 'docker run -it -p 3000:3000 obiorbitalstar/node-web-app'
+                sh 'docker push gcr.io/firststepbruh/express-image:v0.1'
             }
         }
     }
