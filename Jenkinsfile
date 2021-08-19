@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        docker{image 'gcr.io/firststepbruh/express-image:v0.1^C'}
-    }
+    agent any
     stages {
         stage('build') {
             steps {
