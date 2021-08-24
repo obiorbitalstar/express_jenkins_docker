@@ -2,8 +2,7 @@ pipeline {
     agent any
     stages {
         stage('build') {
-            steps {
-                sh ```
+                sh '''
                 sudo apt-get update
                 sudo apt-get install \
                 apt-transport-https \
@@ -11,9 +10,8 @@ pipeline {
                 curl \
                 gnupg \
                 lsb-release
-                ```
+                '''
                 sh 'docker build -t gcr.io/firststepbruh/express-image:v0.1 . '
-            }
         }
         
         stage('test') {
