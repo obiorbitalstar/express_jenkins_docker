@@ -3,6 +3,15 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh ```
+                sudo apt-get update
+                sudo apt-get install \
+                apt-transport-https \
+                ca-certificates \
+                curl \
+                gnupg \
+                lsb-release
+                ```
                 sh 'docker build -t gcr.io/firststepbruh/express-image:v0.1 . '
             }
         }
