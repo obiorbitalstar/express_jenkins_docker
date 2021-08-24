@@ -4,13 +4,13 @@ pipeline {
         stage('build') {
             steps {
                 sh '''
-                sudo su jenkins apt-get update
-                sudo su jenkins apt-get install \
-                apt-transport-https \
-                ca-certificates \
-                curl \
-                gnupg \
-                lsb-release
+                 apt-get update
+                 apt-get install \
+                 apt-transport-https \
+                 ca-certificates \
+                 curl \
+                 gnupg \
+                 lsb-release
                 '''
                 sh 'docker build -t gcr.io/firststepbruh/express-image:v0.1 . '
             }
