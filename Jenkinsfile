@@ -4,9 +4,9 @@ pipeline {
         stage('build') {
             steps {
                 sh '''
-                 apt-get update
-                 apt-get install \
-                 apt-transport-https \
+                 sudo apt-get update
+                 sudo apt-get install \
+                 sudo apt-transport-https \
                  ca-certificates \
                  curl \
                  gnupg \
