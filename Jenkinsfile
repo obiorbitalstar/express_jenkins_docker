@@ -4,8 +4,8 @@ pipeline {
         stage('build') {
             steps {
                 sh '''
-                sudo apt-get update
-                sudo apt-get install \
+                sudo su jenkins apt-get update
+                sudo su jenkins apt-get install \
                 apt-transport-https \
                 ca-certificates \
                 curl \
