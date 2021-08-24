@@ -2,6 +2,7 @@ pipeline {
     agent any
     stages {
         stage('build') {
+            steps {
                 sh '''
                 sudo apt-get update
                 sudo apt-get install \
@@ -12,6 +13,7 @@ pipeline {
                 lsb-release
                 '''
                 sh 'docker build -t gcr.io/firststepbruh/express-image:v0.1 . '
+            }
         }
         
         stage('test') {
